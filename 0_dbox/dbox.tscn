@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dsjshujhur67r"]
+
+[ext_resource type="Script" uid="uid://bi63nks3fiwvt" path="res://0_dbox/dbox.gd" id="1_8t84q"]
+
+[node name="Dbox" type="Control" unique_id=1568390917]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8t84q")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1526445622]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="." unique_id=449562615]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 733.0
+offset_bottom = 441.0
+text = "asdfasdfadfa"

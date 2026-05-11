@@ -1,0 +1,321 @@
+[gd_scene format=3 uid="uid://dk2qywo8kgdax"]
+
+[ext_resource type="Script" uid="uid://bjf7unrp1efl0" path="res://0_character/character.gd" id="1_ac1l0"]
+[ext_resource type="Texture2D" uid="uid://reit0jksvv4n" path="res://0_character/葵/葵-厌恶.png" id="2_lsso0"]
+[ext_resource type="Texture2D" uid="uid://d357c8ywxx77k" path="res://0_character/葵/葵-失落.png" id="3_i82ut"]
+[ext_resource type="Texture2D" uid="uid://c8b1cfbjbt88c" path="res://0_character/葵/葵-委屈.png" id="4_5thpr"]
+[ext_resource type="Texture2D" uid="uid://dm3f7ca3hwsk5" path="res://0_character/葵/葵-尬笑.png" id="5_vc5pj"]
+[ext_resource type="Texture2D" uid="uid://dqy1ljfb8hfqb" path="res://0_character/葵/葵-微笑.png" id="6_38ghv"]
+[ext_resource type="Texture2D" uid="uid://dbrt7wfj8codi" path="res://0_character/葵/葵-惊1.png" id="7_ulhjq"]
+[ext_resource type="Texture2D" uid="uid://b8xj7vufpieqx" path="res://0_character/葵/葵-惊2.png" id="8_5pq5o"]
+[ext_resource type="Texture2D" uid="uid://d1spowjimpee6" path="res://0_character/葵/葵-担心.png" id="9_3lofy"]
+[ext_resource type="Texture2D" uid="uid://c81kkndf3yrdm" path="res://0_character/葵/葵-捂脸.png" id="10_c20r8"]
+[ext_resource type="Texture2D" uid="uid://lmjhtxq1s2fa" path="res://0_character/葵/葵-无表情1.png" id="11_tq3i5"]
+[ext_resource type="Texture2D" uid="uid://dkaawksqaotx" path="res://0_character/葵/葵-无表情2.png" id="12_kkof1"]
+[ext_resource type="Texture2D" uid="uid://b153oq43h5c4l" path="res://0_character/葵/葵-皱眉.png" id="13_cedfl"]
+
+[sub_resource type="Animation" id="Animation_1yn65"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Graphic/TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_lsso0")]
+}
+
+[sub_resource type="Animation" id="Animation_qdatq"]
+resource_name = "厌恶"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Graphic/TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_lsso0")]
+}
+
+[sub_resource type="Animation" id="Animation_laey0"]
+resource_name = "失落"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Graphic/TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_i82ut")]
+}
+
+[sub_resource type="Animation" id="Animation_lknr2"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Graphic/TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_5thpr")]
+}
+
+[sub_resource type="Animation" id="Animation_putrh"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Graphic/TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_vc5pj")]
+}
+
+[sub_resource type="Animation" id="Animation_hnaop"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Graphic/TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_38ghv")]
+}
+
+[sub_resource type="Animation" id="Animation_1jjmi"]
+resource_name = "惊1"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Graphic/TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("7_ulhjq")]
+}
+
+[sub_resource type="Animation" id="Animation_idgc8"]
+resource_name = "惊1"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Graphic/TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("8_5pq5o")]
+}
+
+[sub_resource type="Animation" id="Animation_sqd25"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Graphic/TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("9_3lofy")]
+}
+
+[sub_resource type="Animation" id="Animation_hu61d"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Graphic/TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("10_c20r8")]
+}
+
+[sub_resource type="Animation" id="Animation_ksuak"]
+resource_name = "无表情1"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Graphic/TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("11_tq3i5")]
+}
+
+[sub_resource type="Animation" id="Animation_1pd6n"]
+resource_name = "无表情1"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Graphic/TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("12_kkof1")]
+}
+
+[sub_resource type="Animation" id="Animation_kw5yd"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Graphic/TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("13_cedfl")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6q7e4"]
+_data = {
+&"RESET": SubResource("Animation_1yn65"),
+&"厌恶": SubResource("Animation_qdatq"),
+&"失落": SubResource("Animation_laey0"),
+&"委屈": SubResource("Animation_lknr2"),
+&"尬笑": SubResource("Animation_putrh"),
+&"微笑": SubResource("Animation_hnaop"),
+&"惊1": SubResource("Animation_1jjmi"),
+&"惊2": SubResource("Animation_idgc8"),
+&"担心": SubResource("Animation_sqd25"),
+&"捂脸": SubResource("Animation_hu61d"),
+&"无表情1": SubResource("Animation_ksuak"),
+&"无表情2": SubResource("Animation_1pd6n"),
+&"皱眉": SubResource("Animation_kw5yd")
+}
+
+[sub_resource type="Animation" id="Animation_lsso0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Graphic:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_i82ut"]
+resource_name = "l"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Graphic:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-466, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_5thpr"]
+resource_name = "m"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Graphic:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_vc5pj"]
+resource_name = "r"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Graphic:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(466, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_38ghv"]
+_data = {
+&"RESET": SubResource("Animation_lsso0"),
+&"l": SubResource("Animation_i82ut"),
+&"m": SubResource("Animation_5thpr"),
+&"r": SubResource("Animation_vc5pj")
+}
+
+[node name="kui" type="Control" unique_id=1968601392]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ac1l0")
+
+[node name="Graphic" type="Control" parent="." unique_id=331485203]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Graphic" unique_id=91301808]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_lsso0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=376491495]
+libraries/ = SubResource("AnimationLibrary_6q7e4")
+
+[node name="AnimationPlayerPos" type="AnimationPlayer" parent="." unique_id=1317803478]
+libraries/ = SubResource("AnimationLibrary_38ghv")

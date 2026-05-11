@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://bc7q55vf12e5q"]
+
+[ext_resource type="Script" uid="uid://4ya7hdoqejuf" path="res://0_ui/play/dialogue_manager.gd" id="1_tgn4m"]
+[ext_resource type="PackedScene" uid="uid://c0dgu7ycqc1o0" path="res://0_character/幸/xing.tscn" id="2_srvfy"]
+[ext_resource type="PackedScene" uid="uid://dx4wl83jau3ns" path="res://0_character/澄/cheng.tscn" id="3_nah2v"]
+[ext_resource type="PackedScene" uid="uid://dk2qywo8kgdax" path="res://0_character/葵/kui.tscn" id="4_0t0cj"]
+
+[node name="DialogueManager" type="Control" unique_id=1409643346]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_tgn4m")
+
+[node name="NodeScene" type="Control" parent="." unique_id=190563195]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Xing" parent="." unique_id=1968601392 instance=ExtResource("2_srvfy")]
+visible = false
+layout_mode = 1
+
+[node name="cheng" parent="." unique_id=1856079582 instance=ExtResource("3_nah2v")]
+visible = false
+layout_mode = 1
+
+[node name="kui" parent="." unique_id=1579387403 instance=ExtResource("4_0t0cj")]
+visible = false
+layout_mode = 1
+
+[node name="NodeDbox" type="Control" parent="." unique_id=2125385150]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

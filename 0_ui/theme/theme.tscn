@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://c2csk44knq8m4"]
+
+[ext_resource type="Texture2D" uid="uid://cdbncaf04pbop" path="res://0_ui/theme/Group 31 (1).png" id="1_4euet"]
+[ext_resource type="Script" uid="uid://dda7ra7xyd2xw" path="res://0_ui/theme/theme.gd" id="1_jctv3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4euet"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jctv3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jokyh"]
+
+[node name="Theme" type="Control" unique_id=1631848007]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jctv3")
+
+[node name="Group31(1)" type="Sprite2D" parent="." unique_id=368869029]
+visible = false
+texture = ExtResource("1_4euet")
+centered = false
+
+[node name="Label" type="Label" parent="." unique_id=1931176987]
+layout_mode = 0
+offset_left = 218.0
+offset_top = 168.0
+offset_right = 518.0
+offset_bottom = 306.0
+theme_override_colors/font_color = Color(0.65882355, 0.7254902, 0.75686276, 1)
+theme_override_font_sizes/font_size = 100
+text = "葵与梦"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1356031826]
+layout_mode = 0
+offset_left = 257.0
+offset_top = 345.0
+offset_right = 417.0
+offset_bottom = 411.0
+theme_override_constants/separation = 38
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=1386910728]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.65882355, 0.7254902, 0.75686276, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4euet")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jctv3")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_jokyh")
+text = "进入世界"
+
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=1035712571]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.65882355, 0.7254902, 0.75686276, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4euet")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jctv3")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_jokyh")
+text = "加载梦境"
+
+[node name="Button3" type="Button" parent="VBoxContainer" unique_id=203889078]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.65882355, 0.7254902, 0.75686276, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4euet")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jctv3")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_jokyh")
+text = "附加内容"
+
+[node name="Button4" type="Button" parent="VBoxContainer" unique_id=1289662894]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.65882355, 0.7254902, 0.75686276, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4euet")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jctv3")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_jokyh")
+text = "设置"
+
+[node name="Button5" type="Button" parent="VBoxContainer" unique_id=934896282]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.65882355, 0.7254902, 0.75686276, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4euet")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jctv3")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_jokyh")
+text = "离开"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

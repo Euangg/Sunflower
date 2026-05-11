@@ -1,0 +1,276 @@
+[gd_scene format=3 uid="uid://dx4wl83jau3ns"]
+
+[ext_resource type="Script" uid="uid://bjf7unrp1efl0" path="res://0_character/character.gd" id="1_shlu8"]
+[ext_resource type="Texture2D" uid="uid://bqmcfi2lhbu0o" path="res://0_character/澄/澄-严肃.png" id="2_upnja"]
+[ext_resource type="Texture2D" uid="uid://cjuq4qbsmbm2d" path="res://0_character/澄/澄-困.png" id="3_8nj6t"]
+[ext_resource type="Texture2D" uid="uid://bp562u6uvm743" path="res://0_character/澄/澄-害羞.png" id="4_4j0xn"]
+[ext_resource type="Texture2D" uid="uid://dwg23rusgw42x" path="res://0_character/澄/澄-微笑.png" id="5_ls8f2"]
+[ext_resource type="Texture2D" uid="uid://b8fhq2874tcts" path="res://0_character/澄/澄-惊.png" id="6_xq8mx"]
+[ext_resource type="Texture2D" uid="uid://dt66d1fs7gijg" path="res://0_character/澄/澄-无表情1.png" id="7_wkpbu"]
+[ext_resource type="Texture2D" uid="uid://dyilxsdhaff2a" path="res://0_character/澄/澄-无表情2.png" id="8_6y650"]
+[ext_resource type="Texture2D" uid="uid://ct0bhl2b313wj" path="res://0_character/澄/澄-生气.png" id="9_hnnux"]
+[ext_resource type="Texture2D" uid="uid://v4k2c6ogvbdj" path="res://0_character/澄/澄-皱眉.png" id="10_3u5px"]
+
+[sub_resource type="Animation" id="Animation_i1gh5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Graphic/TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_upnja")]
+}
+
+[sub_resource type="Animation" id="Animation_8w6us"]
+resource_name = "严肃"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Graphic/TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_upnja")]
+}
+
+[sub_resource type="Animation" id="Animation_xrwoy"]
+resource_name = "困"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Graphic/TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_8nj6t")]
+}
+
+[sub_resource type="Animation" id="Animation_y03ry"]
+resource_name = "害羞"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Graphic/TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_4j0xn")]
+}
+
+[sub_resource type="Animation" id="Animation_koq0n"]
+resource_name = "微笑"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Graphic/TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_ls8f2")]
+}
+
+[sub_resource type="Animation" id="Animation_bc3bv"]
+resource_name = "惊"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Graphic/TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_xq8mx")]
+}
+
+[sub_resource type="Animation" id="Animation_rwrol"]
+resource_name = "无表情1"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Graphic/TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("7_wkpbu")]
+}
+
+[sub_resource type="Animation" id="Animation_cyxsb"]
+resource_name = "无表情2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Graphic/TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("8_6y650")]
+}
+
+[sub_resource type="Animation" id="Animation_3mpf0"]
+resource_name = "生气"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Graphic/TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("9_hnnux")]
+}
+
+[sub_resource type="Animation" id="Animation_yhyf8"]
+resource_name = "皱眉"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Graphic/TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("10_3u5px")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_shlu8"]
+_data = {
+&"RESET": SubResource("Animation_i1gh5"),
+&"严肃": SubResource("Animation_8w6us"),
+&"困": SubResource("Animation_xrwoy"),
+&"害羞": SubResource("Animation_y03ry"),
+&"微笑": SubResource("Animation_koq0n"),
+&"惊": SubResource("Animation_bc3bv"),
+&"无表情1": SubResource("Animation_rwrol"),
+&"无表情2": SubResource("Animation_cyxsb"),
+&"生气": SubResource("Animation_3mpf0"),
+&"皱眉": SubResource("Animation_yhyf8")
+}
+
+[sub_resource type="Animation" id="Animation_upnja"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Graphic:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8nj6t"]
+resource_name = "l"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Graphic:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-571, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_4j0xn"]
+resource_name = "m"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Graphic:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ls8f2"]
+resource_name = "r"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Graphic:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(571, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xq8mx"]
+_data = {
+&"RESET": SubResource("Animation_upnja"),
+&"l": SubResource("Animation_8nj6t"),
+&"m": SubResource("Animation_4j0xn"),
+&"r": SubResource("Animation_ls8f2")
+}
+
+[node name="cheng" type="Control" unique_id=1968601392]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_shlu8")
+
+[node name="Graphic" type="Control" parent="." unique_id=331485203]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Graphic" unique_id=91301808]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_upnja")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1137599849]
+libraries/ = SubResource("AnimationLibrary_shlu8")
+
+[node name="AnimationPlayerPos" type="AnimationPlayer" parent="." unique_id=8618718]
+libraries/ = SubResource("AnimationLibrary_xq8mx")
