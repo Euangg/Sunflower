@@ -2,8 +2,15 @@
 
 [ext_resource type="Script" uid="uid://bjf7unrp1efl0" path="res://0_character/character.gd" id="1_5mhse"]
 [ext_resource type="Texture2D" uid="uid://dtb5jdtru05as" path="res://0_character/幸/幸-失落.png" id="2_0o701"]
+[ext_resource type="Shader" uid="uid://c4g1rkvahuvms" path="res://0_character/outline.gdshader" id="2_x4712"]
 [ext_resource type="Texture2D" uid="uid://i7ldkufhr24b" path="res://0_character/幸/幸-微笑.png" id="3_x4712"]
 [ext_resource type="Texture2D" uid="uid://fwtk7gb54lh" path="res://0_character/幸/幸-无表情.png" id="4_vo6uu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vo6uu"]
+shader = ExtResource("2_x4712")
+shader_parameter/outline_color = Color(0.6039216, 0.53333336, 0.8392157, 1)
+shader_parameter/outline_width = 4.5
+shader_parameter/sample_count = 32
 
 [sub_resource type="Animation" id="Animation_e0w20"]
 length = 0.001
@@ -159,6 +166,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="Graphic" unique_id=91301808]
+material = SubResource("ShaderMaterial_vo6uu")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

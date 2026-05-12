@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dk2qywo8kgdax"]
 
 [ext_resource type="Script" uid="uid://bjf7unrp1efl0" path="res://0_character/character.gd" id="1_ac1l0"]
+[ext_resource type="Shader" uid="uid://c4g1rkvahuvms" path="res://0_character/outline.gdshader" id="2_i82ut"]
 [ext_resource type="Texture2D" uid="uid://reit0jksvv4n" path="res://0_character/葵/葵-厌恶.png" id="2_lsso0"]
 [ext_resource type="Texture2D" uid="uid://d357c8ywxx77k" path="res://0_character/葵/葵-失落.png" id="3_i82ut"]
 [ext_resource type="Texture2D" uid="uid://c8b1cfbjbt88c" path="res://0_character/葵/葵-委屈.png" id="4_5thpr"]
@@ -13,6 +14,12 @@
 [ext_resource type="Texture2D" uid="uid://lmjhtxq1s2fa" path="res://0_character/葵/葵-无表情1.png" id="11_tq3i5"]
 [ext_resource type="Texture2D" uid="uid://dkaawksqaotx" path="res://0_character/葵/葵-无表情2.png" id="12_kkof1"]
 [ext_resource type="Texture2D" uid="uid://b153oq43h5c4l" path="res://0_character/葵/葵-皱眉.png" id="13_cedfl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5thpr"]
+shader = ExtResource("2_i82ut")
+shader_parameter/outline_color = Color(0.8862745, 0.7882353, 0.62352943, 1)
+shader_parameter/outline_width = 4.5
+shader_parameter/sample_count = 32
 
 [sub_resource type="Animation" id="Animation_1yn65"]
 length = 0.001
@@ -306,6 +313,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="Graphic" unique_id=91301808]
+material = SubResource("ShaderMaterial_5thpr")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

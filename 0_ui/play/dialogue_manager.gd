@@ -4,6 +4,25 @@ extends Control
 @onready var art_cheng: Character = $cheng
 @onready var art_kui: Character = $kui
 
+const SFX_关门 = preload("uid://cuvwsf6qjrj5t")
+const SFX_故障 = preload("uid://c7mi8pwnhu83m")
+const SFX_敲门 = preload("uid://dvdum8kc3h0u0")
+const SFX_水滴 = preload("uid://lxxdtl7ob4mg")
+const SFX_门铃 = preload("uid://dy6ep2r4d4o1p")
+
+const BGM_平稳 = ("uid://7ythp62spqfj")
+const BGM_怅然 = ("uid://bka6gdu3uu0ik")
+const BGM_急迫 = ("uid://b0s80ersukiyr")
+const BGM_日常 = ("uid://b0d1liq8ar5cc")
+const BGM_星空 = ("uid://brjbypvbwf4cb")
+const BGM_环境音_夜 = ("uid://ixf7o28slin3")
+const BGM_环境音_教室 = ("uid://cv3k63xb6d7si")
+const BGM_环境音_梦魇 = ("uid://ln4yhsdnwp7d")
+const BGM_环境音_电车 = ("uid://0ix3h45h0pya")
+const BGM_环境音_葵田 = ("uid://b5cs6juaeum4p")
+const BGM_环境音_雨声 = ("uid://sr21ytxttcew")
+const BGM_终焉1 = ("uid://f3kebsl5nfem")
+
 
 const SCENE_BLACK = preload("uid://dn34e3flleudc")
 const SCENE_家白天 = preload("uid://ducxi0lqlssns")
@@ -17,6 +36,7 @@ const SCENE_海边黑天 = preload("uid://c6dem7bswldp7")
 const SCENE_玄关白天 = preload("uid://b858t6m3inr4u")
 const SCENE_玄关黑天 = preload("uid://qbymvyavqr6v")
 const SCENE_街道白天 = preload("uid://bjb5w25gmq0jb")
+const SCENE_街道黑天 = preload("uid://bcynouxusfpjt")
 const SCENE_门口白天 = preload("uid://c7quoyhtiorf7")
 const SCENE_葵田白天 = preload("uid://dh2t6xmtnemqn")
 const SCENE_葵田黑天 = preload("uid://c322h820dyptf")
@@ -33,8 +53,9 @@ func hide_all_characters():
 	art_cheng.hide()
 	art_kui.hide()
 const ScriptMain = preload("uid://do7ugl8chy5er")
+const ScriptTest = preload("uid://sbxarervnfc0")
 
-var current_script:Script=ScriptMain
+var current_script=ScriptMain
 var order_curtain:int=0
 func clear_dialogue_box():for d in %NodeDbox.get_children():d.queue_free()
 func load_current_curtain():line_to_curtain(current_script.content[order_curtain])
@@ -169,6 +190,7 @@ func line_to_curtain(line:String):
 
 						"街道白天":dia.process.push_back(func():switch_back_scene(SCENE_街道白天))
 						"街道黄昏":dia.process.push_back(func():switch_back_scene(SCENE_街道黄昏))
+						"街道黑天":dia.process.push_back(func():switch_back_scene(SCENE_街道黑天))
 
 						"电车内白天":dia.process.push_back(func():switch_back_scene(SCENE_电车内白天))
 						"电车内黄昏":dia.process.push_back(func():switch_back_scene(SCENE_电车内黄昏))
@@ -182,6 +204,31 @@ func line_to_curtain(line:String):
 						"校园白天":dia.process.push_back(func():switch_back_scene(SCENE_校园白天))
 						"树下黄昏":dia.process.push_back(func():switch_back_scene(SCENE_树下黄昏))
 						_:print("指令",cmd_parameter[0],"未知参数:",cmd_parameter[1])
+				"SFX":
+					match cmd_parameter[1]:
+						"关门":dia.process.push_back(func():Global.play_sfx(SFX_关门))
+						"故障":dia.process.push_back(func():Global.play_sfx(SFX_故障))
+						"敲门":dia.process.push_back(func():Global.play_sfx(SFX_敲门))
+						"水滴":dia.process.push_back(func():Global.play_sfx(SFX_水滴))
+						"门铃":dia.process.push_back(func():Global.play_sfx(SFX_门铃))
+						_:print("指令",cmd_parameter[0],"未知参数:",cmd_parameter[1])
+				"BGM":
+					match cmd_parameter[1]:
+						"平稳":dia.process.push_back(func():Global.play_bgm(BGM_平稳))
+						"怅然":dia.process.push_back(func():Global.play_bgm(BGM_怅然))
+						"急迫":dia.process.push_back(func():Global.play_bgm(BGM_急迫))
+						"日常":dia.process.push_back(func():Global.play_bgm(BGM_日常))
+						"星空":dia.process.push_back(func():Global.play_bgm(BGM_星空))
+						"环境音_夜":dia.process.push_back(func():Global.play_bgm(BGM_环境音_夜))
+						"环境音_教室":dia.process.push_back(func():Global.play_bgm(BGM_环境音_教室))
+						"环境音_梦魇":dia.process.push_back(func():Global.play_bgm(BGM_环境音_梦魇))
+						"环境音_电车":dia.process.push_back(func():Global.play_bgm(BGM_环境音_电车))
+						"环境音_葵田":dia.process.push_back(func():Global.play_bgm(BGM_环境音_葵田))
+						"环境音_雨声":dia.process.push_back(func():Global.play_bgm(BGM_环境音_雨声))
+						"终焉1":dia.process.push_back(func():Global.play_bgm(BGM_终焉1))
+						"停":dia.process.push_back(func():Global.stop_bgm())
+						_:print("指令",cmd_parameter[0],"未知参数:",cmd_parameter[1])
+				_:print("未知指令:",cmd_parameter[0])
 
 		dia.arr_text=text_offset[0].split("//")
 		dia.end.connect(func():

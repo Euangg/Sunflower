@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dx4wl83jau3ns"]
 
 [ext_resource type="Script" uid="uid://bjf7unrp1efl0" path="res://0_character/character.gd" id="1_shlu8"]
+[ext_resource type="Shader" uid="uid://c4g1rkvahuvms" path="res://0_character/outline.gdshader" id="2_8nj6t"]
 [ext_resource type="Texture2D" uid="uid://bqmcfi2lhbu0o" path="res://0_character/澄/澄-严肃.png" id="2_upnja"]
 [ext_resource type="Texture2D" uid="uid://cjuq4qbsmbm2d" path="res://0_character/澄/澄-困.png" id="3_8nj6t"]
 [ext_resource type="Texture2D" uid="uid://bp562u6uvm743" path="res://0_character/澄/澄-害羞.png" id="4_4j0xn"]
@@ -10,6 +11,12 @@
 [ext_resource type="Texture2D" uid="uid://dyilxsdhaff2a" path="res://0_character/澄/澄-无表情2.png" id="8_6y650"]
 [ext_resource type="Texture2D" uid="uid://ct0bhl2b313wj" path="res://0_character/澄/澄-生气.png" id="9_hnnux"]
 [ext_resource type="Texture2D" uid="uid://v4k2c6ogvbdj" path="res://0_character/澄/澄-皱眉.png" id="10_3u5px"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4j0xn"]
+shader = ExtResource("2_8nj6t")
+shader_parameter/outline_color = Color(0.6431373, 0.7607843, 0.14509805, 1)
+shader_parameter/outline_width = 4.5
+shader_parameter/sample_count = 32
 
 [sub_resource type="Animation" id="Animation_i1gh5"]
 length = 0.001
@@ -261,6 +268,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="Graphic" unique_id=91301808]
+material = SubResource("ShaderMaterial_4j0xn")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

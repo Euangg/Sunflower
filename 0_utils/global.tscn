@@ -7,4 +7,11 @@ script = ExtResource("1_fleak")
 
 [node name="TimerTempPause" type="Timer" parent="." unique_id=55295209]
 
+[node name="Sfx" type="Node" parent="." unique_id=1867395209]
+unique_name_in_owner = true
+
+[node name="Bgm" type="AudioStreamPlayer" parent="." unique_id=1093223964]
+unique_name_in_owner = true
+
 [connection signal="timeout" from="TimerTempPause" to="." method="_on_timer_temp_pause_timeout"]
+[connection signal="finished" from="Bgm" to="." method="_on_bgm_finished"]

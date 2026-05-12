@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dh2t6xmtnemqn"]
 
-[ext_resource type="Texture2D" uid="uid://bn67agmac5ilt" path="res://0_ui/play/scene/场景-门口白天.JPG" id="1_a2v46"]
+[ext_resource type="Texture2D" uid="uid://n8dhqiyus06u" path="res://0_ui/play/scene/场景-葵田白天.PNG" id="1_a2v46"]
 
 [node name="场景家白天" type="Control" unique_id=580029276]
 layout_mode = 3

@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://tckwrcuvkys8"]
 
-[ext_resource type="Texture2D" uid="uid://dmblnk8oxoirm" path="res://0_ui/play/scene/场景-校园白天.JPG" id="1_us1rc"]
+[ext_resource type="Texture2D" uid="uid://b2dci3ept3u2h" path="res://0_ui/play/scene/场景-校园白天.png" id="1_us1rc"]
 
-[node name="场景家白天" type="Control" unique_id=580029276]
+[node name="场景校园白天" type="Control" unique_id=580029276]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

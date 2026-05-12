@@ -12,3 +12,15 @@ const UI_THEME = ("uid://c2csk44knq8m4")
 const UI_PLAY = ("uid://dyad0xw2m2dj6")
 func switch_scene(path_scene:String):
 	get_tree().call_deferred("change_scene_to_file",path_scene)
+
+const SFX = preload("uid://du6350i6e62x4")
+func play_sfx(stream:AudioStream):
+	var sfx:AudioStreamPlayer=SFX.instantiate()
+	sfx.stream=stream
+	%Sfx.add_child(sfx)
+
+func play_bgm(path_bgm:String):
+	%Bgm.stream=load(path_bgm)
+	%Bgm.play()
+func stop_bgm():%Bgm.stop()
+func _on_bgm_finished() -> void:%Bgm.play()
