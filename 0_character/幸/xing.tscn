@@ -4,7 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://dtb5jdtru05as" path="res://0_character/幸/幸-失落.png" id="2_0o701"]
 [ext_resource type="Shader" uid="uid://c4g1rkvahuvms" path="res://0_character/outline.gdshader" id="2_x4712"]
 [ext_resource type="Texture2D" uid="uid://i7ldkufhr24b" path="res://0_character/幸/幸-微笑.png" id="3_x4712"]
+[ext_resource type="Texture2D" uid="uid://cnt2ya404gxkm" path="res://0_character/幸/幸-哭.png" id="4_iwq5a"]
 [ext_resource type="Texture2D" uid="uid://fwtk7gb54lh" path="res://0_character/幸/幸-无表情.png" id="4_vo6uu"]
+[ext_resource type="Texture2D" uid="uid://bcbo0clcav67x" path="res://0_character/幸/幸-失去高光.png" id="5_3jsu4"]
+[ext_resource type="Texture2D" uid="uid://c2isf1ge6yh25" path="res://0_character/幸/幸-失落含泪.png" id="6_pimft"]
+[ext_resource type="Texture2D" uid="uid://uh1ddopdxopp" path="res://0_character/幸/幸-微笑含泪.png" id="8_siv6w"]
+[ext_resource type="Texture2D" uid="uid://d3lxxngjbklaq" path="res://0_character/幸/幸-惊.png" id="9_djpk5"]
+[ext_resource type="Texture2D" uid="uid://ht4wnrvap554" path="res://0_character/幸/幸-担心.png" id="10_l1mcy"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vo6uu"]
 shader = ExtResource("2_x4712")
@@ -27,6 +33,36 @@ tracks/0/keys = {
 "values": [ExtResource("2_0o701")]
 }
 
+[sub_resource type="Animation" id="Animation_bd28v"]
+resource_name = "哭"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Graphic/TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_iwq5a")]
+}
+
+[sub_resource type="Animation" id="Animation_wklwo"]
+resource_name = "失去高光"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Graphic/TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_3jsu4")]
+}
+
 [sub_resource type="Animation" id="Animation_h63mr"]
 resource_name = "失落"
 tracks/0/type = "value"
@@ -42,6 +78,21 @@ tracks/0/keys = {
 "values": [ExtResource("2_0o701")]
 }
 
+[sub_resource type="Animation" id="Animation_3ewu5"]
+resource_name = "失落含泪"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Graphic/TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_pimft")]
+}
+
 [sub_resource type="Animation" id="Animation_rothi"]
 resource_name = "微笑"
 tracks/0/type = "value"
@@ -55,6 +106,51 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [ExtResource("3_x4712")]
+}
+
+[sub_resource type="Animation" id="Animation_rwdo7"]
+resource_name = "微笑含泪"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Graphic/TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("8_siv6w")]
+}
+
+[sub_resource type="Animation" id="Animation_p1yu5"]
+resource_name = "惊"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Graphic/TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("9_djpk5")]
+}
+
+[sub_resource type="Animation" id="Animation_awm85"]
+resource_name = "担心"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Graphic/TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("10_l1mcy")]
 }
 
 [sub_resource type="Animation" id="Animation_divla"]
@@ -75,8 +171,14 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_iwq5a"]
 _data = {
 &"RESET": SubResource("Animation_e0w20"),
+&"哭": SubResource("Animation_bd28v"),
+&"失去高光": SubResource("Animation_wklwo"),
 &"失落": SubResource("Animation_h63mr"),
+&"失落含泪": SubResource("Animation_3ewu5"),
 &"微笑": SubResource("Animation_rothi"),
+&"微笑含泪": SubResource("Animation_rwdo7"),
+&"惊": SubResource("Animation_p1yu5"),
+&"担心": SubResource("Animation_awm85"),
 &"无表情": SubResource("Animation_divla")
 }
 
