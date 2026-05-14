@@ -2,6 +2,44 @@
 
 [ext_resource type="Script" uid="uid://bi63nks3fiwvt" path="res://0_dbox/dbox.gd" id="1_8t84q"]
 
+[sub_resource type="Animation" id="Animation_8t84q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(156, 890)]
+}
+
+[sub_resource type="Animation" id="Animation_co4s7"]
+resource_name = "shake"
+length = 6.4
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.70000005, 0.8, 0.90000004, 1, 1.1, 1.2, 1.3000001, 1.4000001, 1.5, 1.6, 1.7, 1.8000001, 1.9000001, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6000001, 2.7, 2.8, 2.8999999, 3, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6000001, 3.7, 3.8000002, 3.9, 4, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7000003, 4.8, 4.9, 5, 5.1000004, 5.2000003, 5.3, 5.4, 5.5000005, 5.6, 5.7, 5.7999997, 5.9, 6, 6.1, 6.2, 6.3, 6.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(156, 890), Vector2(156, 885), Vector2(156, 890), Vector2(156, 895), Vector2(156, 890), Vector2(156, 885), Vector2(156, 890), Vector2(156, 895), Vector2(156, 890), Vector2(156, 885), Vector2(156, 890), Vector2(156, 895), Vector2(156, 890), Vector2(156, 885), Vector2(156, 890), Vector2(156, 895), Vector2(156, 890), Vector2(156, 885), Vector2(156, 890), Vector2(156, 895), Vector2(156, 890), Vector2(156, 885), Vector2(156, 890), Vector2(156, 895), Vector2(156, 890), Vector2(156, 885), Vector2(156, 890), Vector2(156, 895), Vector2(156, 890), Vector2(156, 885), Vector2(156, 890), Vector2(156, 895), Vector2(156, 890), Vector2(156, 885), Vector2(156, 890), Vector2(156, 895), Vector2(156, 890), Vector2(156, 885), Vector2(156, 890), Vector2(156, 895), Vector2(156, 890), Vector2(156, 885), Vector2(156, 890), Vector2(156, 895), Vector2(156, 890), Vector2(156, 885), Vector2(156, 890), Vector2(156, 895), Vector2(156, 890), Vector2(156, 885), Vector2(156, 890), Vector2(156, 895), Vector2(156, 890), Vector2(156, 885), Vector2(156, 890), Vector2(156, 895), Vector2(156, 890), Vector2(156, 885), Vector2(156, 890), Vector2(156, 895), Vector2(156, 890), Vector2(156, 885), Vector2(156, 890), Vector2(156, 895), Vector2(156, 890)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g6tfh"]
+_data = {
+&"RESET": SubResource("Animation_8t84q"),
+&"shake": SubResource("Animation_co4s7")
+}
+
 [node name="Dbox" type="Control" unique_id=1568390917]
 layout_mode = 3
 anchors_preset = 15
@@ -21,7 +59,19 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="." unique_id=449562615]
 unique_name_in_owner = true
-layout_mode = 0
-offset_right = 733.0
-offset_bottom = 441.0
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.86800003
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 156.0
+offset_top = -47.440063
+offset_right = -156.0
+offset_bottom = -21.999756
+grow_horizontal = 2
+grow_vertical = 0
 text = "asdfasdfadfa"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1824483254]
+libraries/ = SubResource("AnimationLibrary_g6tfh")
+speed_scale = 3.2

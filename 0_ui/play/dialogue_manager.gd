@@ -55,7 +55,7 @@ func hide_all_characters():
 const ScriptMain = preload("uid://do7ugl8chy5er")
 const ScriptTest = preload("uid://sbxarervnfc0")
 
-var current_script=ScriptMain
+var current_script=ScriptTest
 var order_curtain:int=0
 func clear_dialogue_box():for d in %NodeDbox.get_children():d.queue_free()
 func load_current_curtain():line_to_curtain(current_script.content[order_curtain])
@@ -119,18 +119,15 @@ func line_to_curtain(line:String):
 	var cmd_dia=cmds[0]
 	if cmd_dia:
 		match cmd_dia[0]:
-			#"林":
-				#dia=DIA_林一言.instantiate()
-				#default_character=art_lin
-			#"程":
-				#dia=DIA_程晓依.instantiate()
-				#default_character=art_cheng
-			#"荆":
-				#dia=DIA_荆子君.instantiate()
-				#default_character=art_jing
-			#"陈":
-				#dia=DIA_陈继为.instantiate()
-				#default_character=art_chen
+			"幸":
+				dia=DBOX.instantiate()
+				default_character=art_xing
+			"澄":
+				dia=DBOX.instantiate()
+				default_character=art_cheng
+			"葵":
+				dia=DBOX.instantiate()
+				default_character=art_kui
 			#"主":
 				#dia=DIA_PLAYER.instantiate()
 				#var player_face=characters[0].split("-")
@@ -227,6 +224,14 @@ func line_to_curtain(line:String):
 						"环境音_雨声":dia.process.push_back(func():Global.play_bgm(BGM_环境音_雨声))
 						"终焉1":dia.process.push_back(func():Global.play_bgm(BGM_终焉1))
 						"停":dia.process.push_back(func():Global.stop_bgm())
+						_:print("指令",cmd_parameter[0],"未知参数:",cmd_parameter[1])
+				"动画":
+					match cmd_parameter[1]:
+						"抖动上下":dia.process.push_back(func():default_character.ap_shake.play("v"))
+						_:print("指令",cmd_parameter[0],"未知参数:",cmd_parameter[1])
+				"文字":
+					match cmd_parameter[1]:
+						"抖动上下":dia.process.push_back(func():dia.ap.play("shake"))
 						_:print("指令",cmd_parameter[0],"未知参数:",cmd_parameter[1])
 				_:print("未知指令:",cmd_parameter[0])
 

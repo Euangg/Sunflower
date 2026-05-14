@@ -1,6 +1,8 @@
 class_name DialogueBox
 extends Control
 
+@onready var ap: AnimationPlayer = $AnimationPlayer
+
 signal end
 var process:Array[Callable]
 var order_call=-1

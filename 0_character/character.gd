@@ -3,3 +3,4 @@ extends Control
 
 @onready var ap_face: AnimationPlayer = $AnimationPlayer
 @onready var ap_pos: AnimationPlayer = $AnimationPlayerPos
+@onready var ap_shake: AnimationPlayer = $AnimationPlayerShake
