@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://dwgg7pag6suat"]
+
+[ext_resource type="Texture2D" uid="uid://byj2gpi446vx8" path="res://0_ui/setting/滑块.png" id="1_f1u1e"]
+[ext_resource type="Texture2D" uid="uid://dxnrnymjw2lhr" path="res://0_ui/setting/条.png" id="2_nokld"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bmcxs"]
+texture = ExtResource("2_nokld")
+texture_margin_left = 13.0
+texture_margin_top = 5.0
+texture_margin_right = 13.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nokld"]
+load_path = "res://.godot/imported/条.png-6f23e1cf7869849202ec2f4a604b7260.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uvdl8"]
+texture = SubResource("CompressedTexture2D_nokld")
+texture_margin_left = 13.0
+texture_margin_top = 5.0
+texture_margin_right = 13.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1ki06"]
+load_path = "res://.godot/imported/条.png-6f23e1cf7869849202ec2f4a604b7260.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xbad0"]
+texture = SubResource("CompressedTexture2D_1ki06")
+texture_margin_left = 13.0
+texture_margin_top = 5.0
+texture_margin_right = 13.0
+texture_margin_bottom = 5.0
+
+[node name="Slide" type="VBoxContainer" unique_id=1606015927]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1580.0
+offset_bottom = -1008.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="." unique_id=1603818399]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.2, 0.14901961, 0.16470589, 1)
+theme_override_font_sizes/font_size = 32
+text = "啊手动阀"
+
+[node name="HSlider" type="HSlider" parent="." unique_id=1455046558]
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("1_f1u1e")
+theme_override_icons/grabber_highlight = ExtResource("1_f1u1e")
+theme_override_icons/grabber_disabled = ExtResource("1_f1u1e")
+theme_override_styles/slider = SubResource("StyleBoxTexture_bmcxs")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_uvdl8")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_xbad0")

@@ -1,0 +1,141 @@
+[gd_scene format=3 uid="uid://4sryjlxnmvpr"]
+
+[ext_resource type="Script" uid="uid://dtvr7i8wni3bp" path="res://0_ui/setting/setting.gd" id="1_gig7o"]
+[ext_resource type="Texture2D" uid="uid://c3rnnk83qgmv2" path="res://0_ui/setting/8c9d52c86ce4a65d0e0292bab19ba6f2.png" id="1_ok326"]
+[ext_resource type="PackedScene" uid="uid://3vyyp4etqp14" path="res://0_ui/background/background.tscn" id="1_u6gdr"]
+[ext_resource type="PackedScene" uid="uid://h1h5r784pstt" path="res://0_ui/setting/button_cross.tscn" id="3_02q0a"]
+[ext_resource type="Texture2D" uid="uid://c00q60si4k0dt" path="res://0_ui/setting/设置底图.png" id="3_60vas"]
+[ext_resource type="PackedScene" uid="uid://dwgg7pag6suat" path="res://0_ui/setting/slide.tscn" id="6_gig7o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u6gdr"]
+
+[node name="Setting" type="Control" unique_id=1149876799]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gig7o")
+
+[node name="TextureRect" parent="." unique_id=594531150 instance=ExtResource("1_u6gdr")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="设置底图" type="Sprite2D" parent="." unique_id=127285315]
+position = Vector2(981, 530)
+texture = ExtResource("3_60vas")
+
+[node name="TextureButton" parent="." unique_id=68865853 instance=ExtResource("3_02q0a")]
+layout_mode = 0
+offset_left = 1608.0
+offset_top = 199.0
+offset_right = 1686.0
+offset_bottom = 278.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=301258198]
+layout_mode = 0
+offset_left = 469.0
+offset_top = 279.0
+offset_right = 952.0
+offset_bottom = 421.0
+theme_override_constants/separation = 200
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1263996957]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=746818551]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.2, 0.14901961, 0.16470589, 1)
+theme_override_font_sizes/font_size = 32
+text = "显示"
+
+[node name="ItemList" type="ItemList" parent="HBoxContainer/VBoxContainer" unique_id=706395424]
+custom_minimum_size = Vector2(80, 95)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.2, 0.14901961, 0.16470589, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/panel = SubResource("StyleBoxEmpty_u6gdr")
+item_count = 2
+item_0/text = "窗口"
+item_1/text = "全屏"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer" unique_id=274848503]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2" unique_id=628944917]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.2, 0.14901961, 0.16470589, 1)
+theme_override_font_sizes/font_size = 32
+text = "语言"
+
+[node name="ItemList" type="ItemList" parent="HBoxContainer/VBoxContainer2" unique_id=759461774]
+custom_minimum_size = Vector2(80, 95)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.2, 0.14901961, 0.16470589, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/panel = SubResource("StyleBoxEmpty_u6gdr")
+item_count = 1
+item_0/text = "中文"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=497491431]
+layout_mode = 0
+offset_left = 443.0
+offset_top = 538.0
+offset_right = 1599.0
+offset_bottom = 774.0
+theme_override_constants/separation = 156
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer2" unique_id=91873097]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Slide" parent="HBoxContainer2/VBoxContainer" unique_id=1606015927 instance=ExtResource("6_gig7o")]
+layout_mode = 2
+
+[node name="Label" parent="HBoxContainer2/VBoxContainer/Slide" index="0" unique_id=1603818399]
+text = "文本显示速度"
+
+[node name="Slide2" parent="HBoxContainer2/VBoxContainer" unique_id=419264157 instance=ExtResource("6_gig7o")]
+layout_mode = 2
+
+[node name="Label" parent="HBoxContainer2/VBoxContainer/Slide2" index="0" unique_id=1603818399]
+text = "自动模式播放速度"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer2" unique_id=504435907]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Slide" parent="HBoxContainer2/VBoxContainer2" unique_id=209083736 instance=ExtResource("6_gig7o")]
+layout_mode = 2
+
+[node name="Label" parent="HBoxContainer2/VBoxContainer2/Slide" index="0" unique_id=1603818399]
+text = "音乐音量"
+
+[node name="Slide2" parent="HBoxContainer2/VBoxContainer2" unique_id=306797727 instance=ExtResource("6_gig7o")]
+layout_mode = 2
+
+[node name="Label" parent="HBoxContainer2/VBoxContainer2/Slide2" index="0" unique_id=1603818399]
+text = "音效音量"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=959763787]
+visible = false
+texture = ExtResource("1_ok326")
+centered = false
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+
+[editable path="HBoxContainer2/VBoxContainer/Slide"]
+[editable path="HBoxContainer2/VBoxContainer/Slide2"]
+[editable path="HBoxContainer2/VBoxContainer2/Slide"]
+[editable path="HBoxContainer2/VBoxContainer2/Slide2"]

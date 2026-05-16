@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://bemgwyaxbnowc"]
 
 [ext_resource type="Script" uid="uid://b8887gaiporrd" path="res://0_utils/global.gd" id="1_fleak"]
+[ext_resource type="PackedScene" uid="uid://4sryjlxnmvpr" path="res://0_ui/setting/setting.tscn" id="2_2axsy"]
+[ext_resource type="PackedScene" uid="uid://cdxupxss4h14v" path="res://0_ui/save/save.tscn" id="3_2jpft"]
 
 [node name="Global" type="Node" unique_id=1885499822]
 script = ExtResource("1_fleak")
@@ -12,6 +14,16 @@ unique_name_in_owner = true
 
 [node name="Bgm" type="AudioStreamPlayer" parent="." unique_id=1093223964]
 unique_name_in_owner = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1928601747]
+
+[node name="Setting" parent="CanvasLayer" unique_id=1149876799 instance=ExtResource("2_2axsy")]
+unique_name_in_owner = true
+visible = false
+
+[node name="Save" parent="CanvasLayer" unique_id=210612361 instance=ExtResource("3_2jpft")]
+unique_name_in_owner = true
+visible = false
 
 [connection signal="timeout" from="TimerTempPause" to="." method="_on_timer_temp_pause_timeout"]
 [connection signal="finished" from="Bgm" to="." method="_on_bgm_finished"]

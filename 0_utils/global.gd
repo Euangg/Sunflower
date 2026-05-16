@@ -24,3 +24,16 @@ func play_bgm(path_bgm:String):
 	%Bgm.play()
 func stop_bgm():%Bgm.stop()
 func _on_bgm_finished() -> void:%Bgm.play()
+
+
+func setting_activate():
+	%Setting.show()
+	
+func setting_inactivate():
+	%Setting.hide()
+	
+func save_activate():
+	%Save.show()
+
+func save_inactivate():
+	%Save.hide()

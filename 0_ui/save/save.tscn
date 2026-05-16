@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://cdxupxss4h14v"]
+
+[ext_resource type="Script" uid="uid://c8ng2w1kduhcn" path="res://0_ui/save/save.gd" id="1_2j1hb"]
+[ext_resource type="Texture2D" uid="uid://ci3awdwl72b37" path="res://0_ui/save/9ff734a2df783dac8dbd133fd92beb4a.png" id="1_dd6ku"]
+[ext_resource type="PackedScene" uid="uid://3vyyp4etqp14" path="res://0_ui/background/background.tscn" id="2_ubnxy"]
+[ext_resource type="PackedScene" uid="uid://ul3snltbsjxk" path="res://0_ui/save/slot.tscn" id="3_6belj"]
+[ext_resource type="PackedScene" uid="uid://h1h5r784pstt" path="res://0_ui/setting/button_cross.tscn" id="4_i27ks"]
+[ext_resource type="PackedScene" uid="uid://boyrldwipvmkj" path="res://0_ui/save/button_arrow.tscn" id="5_nxps7"]
+
+[node name="Save" type="Control" unique_id=210612361]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2j1hb")
+
+[node name="TextureRect" parent="." unique_id=594531150 instance=ExtResource("2_ubnxy")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=1023849721]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -821.5
+offset_top = -329.0
+offset_right = 821.5
+offset_bottom = 329.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 139
+theme_override_constants/v_separation = 124
+columns = 3
+
+[node name="Slot" parent="GridContainer" unique_id=1623614934 instance=ExtResource("3_6belj")]
+layout_mode = 2
+
+[node name="Slot2" parent="GridContainer" unique_id=783743079 instance=ExtResource("3_6belj")]
+layout_mode = 2
+
+[node name="Slot3" parent="GridContainer" unique_id=1841210692 instance=ExtResource("3_6belj")]
+layout_mode = 2
+
+[node name="Slot4" parent="GridContainer" unique_id=2125736152 instance=ExtResource("3_6belj")]
+layout_mode = 2
+
+[node name="Slot5" parent="GridContainer" unique_id=1302774180 instance=ExtResource("3_6belj")]
+layout_mode = 2
+
+[node name="Slot6" parent="GridContainer" unique_id=485331608 instance=ExtResource("3_6belj")]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2012512286]
+visible = false
+texture = ExtResource("1_dd6ku")
+centered = false
+
+[node name="TextureButton" parent="." unique_id=68865853 instance=ExtResource("4_i27ks")]
+layout_mode = 0
+offset_left = 1807.0
+offset_top = 28.0
+offset_right = 1885.0
+offset_bottom = 107.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1247989207]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -99.0
+offset_top = -141.0
+offset_right = 99.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="TextureButton" parent="HBoxContainer" unique_id=614717944 instance=ExtResource("5_nxps7")]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="HBoxContainer" unique_id=1053445022]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9490196, 0.8392157, 1)
+theme_override_font_sizes/font_size = 61
+text = "1"
+horizontal_alignment = 2
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=1445339237]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92156863, 0.8901961, 0.8980392, 1)
+theme_override_font_sizes/font_size = 61
+text = "/"
+
+[node name="Label3" type="Label" parent="HBoxContainer" unique_id=11797357]
+custom_minimum_size = Vector2(50, 73.945)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92156863, 0.8901961, 0.8980392, 1)
+theme_override_font_sizes/font_size = 45
+text = "3"
+vertical_alignment = 2
+
+[node name="TextureButton2" parent="HBoxContainer" unique_id=1381272038 instance=ExtResource("5_nxps7")]
+layout_mode = 2
+flip_h = true
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

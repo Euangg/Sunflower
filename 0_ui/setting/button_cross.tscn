@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://h1h5r784pstt"]
+
+[ext_resource type="Texture2D" uid="uid://bqyl4tuqd8cl1" path="res://0_ui/setting/退出.png" id="1_lg51t"]
+[ext_resource type="Texture2D" uid="uid://ds544txa7kd5m" path="res://0_ui/setting/退出2.png" id="2_fuoc1"]
+
+[node name="TextureButton" type="TextureButton" unique_id=68865853]
+offset_left = 1620.0
+offset_top = 193.0
+offset_right = 1698.0
+offset_bottom = 272.0
+texture_normal = ExtResource("1_lg51t")
+texture_hover = ExtResource("2_fuoc1")
+stretch_mode = 3

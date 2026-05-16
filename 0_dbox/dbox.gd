@@ -2,6 +2,7 @@ class_name DialogueBox
 extends Control
 
 @onready var ap: AnimationPlayer = $AnimationPlayer
+var cha_name:String=""
 
 signal end
 var process:Array[Callable]
@@ -16,6 +17,7 @@ var amount_characters_should_shown:float=0
 var is_stopped=false
 
 func _ready() -> void:
+	%Name.text=cha_name
 	mouse_filter=Control.MOUSE_FILTER_IGNORE
 	reinit()
 

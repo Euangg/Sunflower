@@ -55,7 +55,7 @@ func hide_all_characters():
 const ScriptMain = preload("uid://do7ugl8chy5er")
 const ScriptTest = preload("uid://sbxarervnfc0")
 
-var current_script=ScriptTest
+var current_script=ScriptMain
 var order_curtain:int=0
 func clear_dialogue_box():for d in %NodeDbox.get_children():d.queue_free()
 func load_current_curtain():line_to_curtain(current_script.content[order_curtain])
@@ -64,7 +64,9 @@ func load_next_curtain(offset:int=0):
 	if order_curtain>=current_script.content.size():return
 	load_current_curtain()
 
-const DBOX = preload("uid://dsjshujhur67r")
+const DBOX = preload("uid://b5wogb611tm0o")
+const DBOX_CHA = preload("uid://dsjshujhur67r")
+
 func pick_cmd(arr_str:PackedStringArray,flag:String)->String:
 	var order_start=arr_str[0].find("【")
 	if order_start==-1:return ""
@@ -120,13 +122,16 @@ func line_to_curtain(line:String):
 	if cmd_dia:
 		match cmd_dia[0]:
 			"幸":
-				dia=DBOX.instantiate()
+				dia=DBOX_CHA.instantiate()
+				dia.cha_name="幸"
 				default_character=art_xing
 			"澄":
-				dia=DBOX.instantiate()
+				dia=DBOX_CHA.instantiate()
+				dia.cha_name="澄"
 				default_character=art_cheng
 			"葵":
-				dia=DBOX.instantiate()
+				dia=DBOX_CHA.instantiate()
+				dia.cha_name="葵"
 				default_character=art_kui
 			#"主":
 				#dia=DIA_PLAYER.instantiate()
@@ -245,3 +250,26 @@ func line_to_curtain(line:String):
 
 func _ready() -> void:
 	load_current_curtain()
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("esc"):
+		if %Pause.visible:%Pause.hide()
+		else:%Pause.show()
+
+func _on_button_esc_pressed() -> void:
+	%Pause.show()
+
+func _on_button_back_pressed() -> void:
+	%Pause.hide()
+
+func _on_button_save_pressed() -> void:
+	Global.save_activate()
+
+func _on_button_load_pressed() -> void:
+	Global.save_activate()
+
+func _on_button_setting_pressed() -> void:
+	Global.setting_activate()
+
+func _on_button_theme_pressed() -> void:
+	Global.switch_scene(Global.UI_THEME)

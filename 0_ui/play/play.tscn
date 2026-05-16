@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dyad0xw2m2dj6"]
 
 [ext_resource type="PackedScene" uid="uid://bc7q55vf12e5q" path="res://0_ui/play/dialogue_manager.tscn" id="1_b64jn"]
+[ext_resource type="Texture2D" uid="uid://djs5rxws02d44" path="res://0_dbox/aab502e39a78ea5cb57608948531e544.png" id="1_bnivi"]
 
 [node name="Play" type="Control" unique_id=672706366]
 layout_mode = 3
@@ -10,6 +11,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="Aab502e39a78Ea5Cb57608948531e544" type="Sprite2D" parent="." unique_id=2105414194]
+visible = false
+position = Vector2(1126, 576)
+texture = ExtResource("1_bnivi")
 
 [node name="DialogueManager" parent="." unique_id=1409643346 instance=ExtResource("1_b64jn")]
 layout_mode = 1

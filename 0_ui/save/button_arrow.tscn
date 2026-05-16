@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://boyrldwipvmkj"]
+
+[ext_resource type="Texture2D" uid="uid://bkovrwisgwdby" path="res://0_ui/save/arrow_normal.tres" id="1_igooe"]
+[ext_resource type="Texture2D" uid="uid://dd73qhp0amxa5" path="res://0_ui/save/arrow_hover.tres" id="2_6k7ed"]
+
+[node name="TextureButton2" type="TextureButton" unique_id=614717944]
+offset_right = 32.0
+offset_bottom = 54.0
+texture_normal = ExtResource("1_igooe")
+texture_hover = ExtResource("2_6k7ed")
+stretch_mode = 3

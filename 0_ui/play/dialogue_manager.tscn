@@ -2,8 +2,18 @@
 
 [ext_resource type="Script" uid="uid://4ya7hdoqejuf" path="res://0_ui/play/dialogue_manager.gd" id="1_tgn4m"]
 [ext_resource type="PackedScene" uid="uid://c0dgu7ycqc1o0" path="res://0_character/幸/xing.tscn" id="2_srvfy"]
+[ext_resource type="PackedScene" uid="uid://c6dem7bswldp7" path="res://0_ui/play/scene/场景-海边黑天.tscn" id="2_yb8ch"]
 [ext_resource type="PackedScene" uid="uid://dx4wl83jau3ns" path="res://0_character/澄/cheng.tscn" id="3_nah2v"]
 [ext_resource type="PackedScene" uid="uid://dk2qywo8kgdax" path="res://0_character/葵/kui.tscn" id="4_0t0cj"]
+[ext_resource type="Texture2D" uid="uid://dx87yo21u6ysw" path="res://0_ui/play/边框.png" id="5_vltgv"]
+[ext_resource type="Texture2D" uid="uid://btehynr3v4fvt" path="res://0_ui/play/暂停.png" id="6_vltgv"]
+[ext_resource type="Texture2D" uid="uid://cndj80n2gmbby" path="res://0_ui/play/暂停_hover.png" id="7_hqkw3"]
+[ext_resource type="Texture2D" uid="uid://bvrrsmhyo5kd5" path="res://0_ui/play/快进.png" id="8_mw6lc"]
+[ext_resource type="Texture2D" uid="uid://qo1syymu7ik4" path="res://0_ui/play/快进中.png" id="9_eeh5j"]
+[ext_resource type="Texture2D" uid="uid://u6ba8rf1bekt" path="res://0_ui/play/自动播放.tres" id="10_76cvl"]
+[ext_resource type="Texture2D" uid="uid://djk67i1jvyoan" path="res://0_ui/play/自动播放_hover.tres" id="11_1ih5g"]
+[ext_resource type="Texture2D" uid="uid://djs5rxws02d44" path="res://0_dbox/aab502e39a78ea5cb57608948531e544.png" id="12_1ih5g"]
+[ext_resource type="PackedScene" uid="uid://st3qgehtm72q" path="res://0_ui/pause/pause.tscn" id="14_4l6ur"]
 
 [node name="DialogueManager" type="Control" unique_id=1409643346]
 layout_mode = 3
@@ -21,8 +31,22 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -2.0
+offset_right = -2.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="场景家白天" parent="NodeScene" unique_id=580029276 instance=ExtResource("2_yb8ch")]
+layout_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1660063355]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_vltgv")
 
 [node name="Xing" parent="." unique_id=1968601392 instance=ExtResource("2_srvfy")]
 visible = false
@@ -45,3 +69,97 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2104789358]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 66.0
+offset_right = 1811.0
+offset_bottom = 131.0
+theme_override_constants/separation = 50
+
+[node name="ButtonEsc" type="TextureButton" parent="HBoxContainer" unique_id=1924035857]
+layout_mode = 2
+texture_normal = ExtResource("6_vltgv")
+texture_hover = ExtResource("7_hqkw3")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/ButtonEsc" unique_id=1219425722]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 62.0
+offset_right = 51.0
+offset_bottom = 85.0
+theme_override_colors/font_color = Color(0.8235294, 0.7411765, 0.5411765, 1)
+text = "设置"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="HBoxContainer" unique_id=2142693720]
+custom_minimum_size = Vector2(1359.42, 0)
+layout_mode = 2
+
+[node name="ButtonSkip" type="TextureButton" parent="HBoxContainer" unique_id=1848589335]
+layout_mode = 2
+texture_normal = ExtResource("8_mw6lc")
+texture_hover = ExtResource("9_eeh5j")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/ButtonSkip" unique_id=1188325672]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 62.0
+offset_right = 51.0
+offset_bottom = 85.0
+theme_override_colors/font_color = Color(0.8235294, 0.7411765, 0.5411765, 1)
+text = "快进"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonAuto" type="TextureButton" parent="HBoxContainer" unique_id=1841470149]
+layout_mode = 2
+texture_normal = ExtResource("10_76cvl")
+texture_hover = ExtResource("11_1ih5g")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/ButtonAuto" unique_id=1643432581]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -2.0
+offset_right = 20.0
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.8235294, 0.7411765, 0.5411765, 1)
+text = "自动"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1245200138]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_1ih5g")
+
+[node name="Pause" parent="." unique_id=800958447 instance=ExtResource("14_4l6ur")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+
+[connection signal="pressed" from="HBoxContainer/ButtonEsc" to="." method="_on_button_esc_pressed"]
+[connection signal="pressed" from="Pause/VBoxContainer/ButtonBack" to="." method="_on_button_back_pressed"]
+[connection signal="pressed" from="Pause/VBoxContainer/ButtonSave" to="." method="_on_button_save_pressed"]
+[connection signal="pressed" from="Pause/VBoxContainer/ButtonLoad" to="." method="_on_button_load_pressed"]
+[connection signal="pressed" from="Pause/VBoxContainer/ButtonSetting" to="." method="_on_button_setting_pressed"]
+[connection signal="pressed" from="Pause/VBoxContainer/ButtonTheme" to="." method="_on_button_theme_pressed"]
+
+[editable path="Pause"]

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://ul3snltbsjxk"]
+
+[ext_resource type="Texture2D" uid="uid://bkwvdcucqvbfb" path="res://0_ui/save/方框.png" id="1_smk7c"]
+[ext_resource type="Texture2D" uid="uid://hvs4wqlfthea" path="res://0_ui/save/方框_hover.png" id="2_ghqu4"]
+
+[node name="Slot" type="TextureButton" unique_id=1623614934]
+texture_normal = ExtResource("1_smk7c")
+texture_hover = ExtResource("2_ghqu4")
+stretch_mode = 3

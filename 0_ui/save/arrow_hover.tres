@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://dd73qhp0amxa5"]
+
+[ext_resource type="Texture2D" uid="uid://wo11cm0kq4iq" path="res://0_ui/save/翻页箭头2.png" id="1_hlmf7"]
+
+[resource]
+atlas = ExtResource("1_hlmf7")
+region = Rect2(7, 8, 32, 55)

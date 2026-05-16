@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://dsjshujhur67r"]
+
+[ext_resource type="Script" uid="uid://bi63nks3fiwvt" path="res://0_dbox/dbox.gd" id="1_lm13y"]
+[ext_resource type="Texture2D" uid="uid://djs5rxws02d44" path="res://0_dbox/aab502e39a78ea5cb57608948531e544.png" id="2_xu1mf"]
+[ext_resource type="Texture2D" uid="uid://c73mbli3j0mtx" path="res://0_dbox/对话框（底）.png" id="3_7pwrv"]
+[ext_resource type="Texture2D" uid="uid://bqjel21dutmwq" path="res://0_dbox/名字框（底图）.png" id="4_tp74s"]
+[ext_resource type="Texture2D" uid="uid://ccrknbxu2fi0v" path="res://0_dbox/名字框垫图.png" id="5_xr16k"]
+
+[sub_resource type="Animation" id="Animation_8t84q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(486, 890)]
+}
+
+[sub_resource type="Animation" id="Animation_co4s7"]
+resource_name = "shake"
+length = 6.4
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.70000005, 0.8, 0.90000004, 1, 1.1, 1.2, 1.3000001, 1.4000001, 1.5, 1.6, 1.7, 1.8000001, 1.9000001, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6000001, 2.7, 2.8, 2.8999999, 3, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6000001, 3.7, 3.8000002, 3.9, 4, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7000003, 4.8, 4.9, 5, 5.1000004, 5.2000003, 5.3, 5.4, 5.5000005, 5.6, 5.7, 5.7999997, 5.9, 6, 6.1, 6.2, 6.3, 6.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(486, 890), Vector2(486, 885), Vector2(486, 890), Vector2(486, 895), Vector2(486, 890), Vector2(486, 885), Vector2(486, 890), Vector2(486, 895), Vector2(486, 890), Vector2(486, 885), Vector2(486, 890), Vector2(486, 895), Vector2(486, 890), Vector2(486, 885), Vector2(486, 890), Vector2(486, 895), Vector2(486, 890), Vector2(486, 885), Vector2(486, 890), Vector2(486, 895), Vector2(486, 890), Vector2(486, 885), Vector2(486, 890), Vector2(486, 895), Vector2(486, 890), Vector2(486, 885), Vector2(486, 890), Vector2(486, 895), Vector2(486, 890), Vector2(486, 885), Vector2(486, 890), Vector2(486, 895), Vector2(486, 890), Vector2(486, 885), Vector2(486, 890), Vector2(486, 895), Vector2(486, 890), Vector2(486, 885), Vector2(486, 890), Vector2(486, 895), Vector2(486, 890), Vector2(486, 885), Vector2(486, 890), Vector2(486, 895), Vector2(486, 890), Vector2(486, 885), Vector2(486, 890), Vector2(486, 895), Vector2(486, 890), Vector2(486, 885), Vector2(486, 890), Vector2(486, 895), Vector2(486, 890), Vector2(486, 885), Vector2(486, 890), Vector2(486, 895), Vector2(486, 890), Vector2(486, 885), Vector2(486, 890), Vector2(486, 895), Vector2(486, 890), Vector2(486, 885), Vector2(486, 890), Vector2(486, 895), Vector2(486, 890)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g6tfh"]
+_data = {
+&"RESET": SubResource("Animation_8t84q"),
+&"shake": SubResource("Animation_co4s7")
+}
+
+[node name="Dbox" type="Control" unique_id=1568390917]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lm13y")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1526445622]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_xu1mf")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=2086642416]
+layout_mode = 1
+offset_left = 324.0
+offset_top = 168.0
+offset_right = 1583.0
+offset_bottom = 1023.0
+texture = ExtResource("3_7pwrv")
+
+[node name="名字框（底图）" type="Sprite2D" parent="." unique_id=352919632]
+position = Vector2(519, 845)
+texture = ExtResource("4_tp74s")
+
+[node name="名字框垫图" type="Sprite2D" parent="名字框（底图）" unique_id=452685190]
+position = Vector2(-7, 1)
+texture = ExtResource("5_xr16k")
+
+[node name="Name" type="Label" parent="名字框（底图）" unique_id=681491306]
+unique_name_in_owner = true
+offset_left = -26.0
+offset_top = -10.0
+offset_right = 14.0
+offset_bottom = 13.0
+text = "葵"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="." unique_id=449562615]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.86800003
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 486.0
+offset_top = -47.440063
+offset_right = -364.0
+offset_bottom = -70.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "asdfasdfadfa"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1824483254]
+libraries/ = SubResource("AnimationLibrary_g6tfh")
+speed_scale = 3.2

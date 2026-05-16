@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://d4hwo1l17j0mw"]
+
+[ext_resource type="Script" uid="uid://dq4xeqlo0xekw" path="res://0_ui/theme/button.gd" id="1_qvklc"]
+[ext_resource type="Texture2D" uid="uid://c55obli2i1iwi" path="res://0_ui/theme/选项选择按钮.png" id="1_ytgad"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4euet"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jctv3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i2imb"]
+
+[node name="Button" type="Button" unique_id=1026116336]
+z_index = 1
+theme_override_colors/font_color = Color(0.65882355, 0.7254902, 0.75686276, 1)
+theme_override_colors/font_hover_color = Color(0.58431375, 0.70980394, 0.7607843, 1)
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4euet")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jctv3")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_i2imb")
+text = "进入世界"
+script = ExtResource("1_qvklc")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1416087297]
+unique_name_in_owner = true
+visible = false
+z_as_relative = false
+layout_mode = 0
+offset_left = -66.0
+offset_top = -19.0
+offset_right = 343.0
+offset_bottom = 72.0
+texture = ExtResource("1_ytgad")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
