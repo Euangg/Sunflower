@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="Sunflower"
+config/version="v0.9"
 run/main_scene="uid://c2csk44knq8m4"
 config/features=PackedStringArray("4.6", "Forward Plus")
+
+[audio]
+
+buses/default_bus_layout="uid://4a3axi00u331"
 
 [autoload]
 

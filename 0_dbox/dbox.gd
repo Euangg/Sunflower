@@ -1,7 +1,6 @@
 class_name DialogueBox
 extends Control
 
-@onready var ap: AnimationPlayer = $AnimationPlayer
 var cha_name:String=""
 
 signal end
@@ -16,8 +15,13 @@ var order_char=0
 var amount_characters_should_shown:float=0
 var is_stopped=false
 
+var pos_ori_y:float
+var shake_num=0
+var intensity_shake=2
+var time_shake=0
 func _ready() -> void:
 	%Name.text=cha_name
+	pos_ori_y=%Label.position.y
 	mouse_filter=Control.MOUSE_FILTER_IGNORE
 	reinit()
 
@@ -36,6 +40,12 @@ func _unhandled_input(event: InputEvent) -> void:
 			if is_stopped:is_stopped=false
 			else:amount_characters_should_shown=arr_text[order_text].length()
 		else:try_load_next_line()
+
+func _process(delta: float) -> void:
+	if time_shake>0:
+		%Label.position.y=pos_ori_y+intensity_shake*sin(2*PI*16*time_shake)
+		time_shake-=delta
+	else:%Label.position.y=pos_ori_y
 
 func _physics_process(delta: float) -> void:
 	if order_char <arr_text[order_text].length():#播放中

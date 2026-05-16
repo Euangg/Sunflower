@@ -41,7 +41,7 @@ theme_override_constants/h_separation = 139
 theme_override_constants/v_separation = 124
 columns = 3
 
-[node name="Slot" parent="GridContainer" unique_id=1623614934 instance=ExtResource("3_6belj")]
+[node name="Slot1" parent="GridContainer" unique_id=1623614934 instance=ExtResource("3_6belj")]
 layout_mode = 2
 
 [node name="Slot2" parent="GridContainer" unique_id=783743079 instance=ExtResource("3_6belj")]
@@ -85,10 +85,11 @@ offset_bottom = -60.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="TextureButton" parent="HBoxContainer" unique_id=614717944 instance=ExtResource("5_nxps7")]
+[node name="ButtonLeft" parent="HBoxContainer" unique_id=614717944 instance=ExtResource("5_nxps7")]
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="HBoxContainer" unique_id=1053445022]
+[node name="Page" type="Label" parent="HBoxContainer" unique_id=1053445022]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.9490196, 0.8392157, 1)
@@ -110,8 +111,16 @@ theme_override_font_sizes/font_size = 45
 text = "3"
 vertical_alignment = 2
 
-[node name="TextureButton2" parent="HBoxContainer" unique_id=1381272038 instance=ExtResource("5_nxps7")]
+[node name="ButtonRight" parent="HBoxContainer" unique_id=1381272038 instance=ExtResource("5_nxps7")]
 layout_mode = 2
 flip_h = true
 
+[connection signal="pressed" from="GridContainer/Slot1" to="." method="_on_slot_1_pressed"]
+[connection signal="pressed" from="GridContainer/Slot2" to="." method="_on_slot_2_pressed"]
+[connection signal="pressed" from="GridContainer/Slot3" to="." method="_on_slot_3_pressed"]
+[connection signal="pressed" from="GridContainer/Slot4" to="." method="_on_slot_4_pressed"]
+[connection signal="pressed" from="GridContainer/Slot5" to="." method="_on_slot_5_pressed"]
+[connection signal="pressed" from="GridContainer/Slot6" to="." method="_on_slot_6_pressed"]
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/ButtonLeft" to="." method="_on_button_left_pressed"]
+[connection signal="pressed" from="HBoxContainer/ButtonRight" to="." method="_on_button_right_pressed"]

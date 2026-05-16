@@ -2,8 +2,37 @@
 
 [ext_resource type="Texture2D" uid="uid://bkwvdcucqvbfb" path="res://0_ui/save/方框.png" id="1_smk7c"]
 [ext_resource type="Texture2D" uid="uid://hvs4wqlfthea" path="res://0_ui/save/方框_hover.png" id="2_ghqu4"]
+[ext_resource type="Script" uid="uid://d3i0lxibbugci" path="res://0_ui/save/slot.gd" id="3_ghqu4"]
 
 [node name="Slot" type="TextureButton" unique_id=1623614934]
 texture_normal = ExtResource("1_smk7c")
 texture_hover = ExtResource("2_ghqu4")
 stretch_mode = 3
+script = ExtResource("3_ghqu4")
+
+[node name="Screenshot" type="TextureRect" parent="." unique_id=1960816612]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 6.0
+offset_right = -3.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
+[node name="Time" type="Label" parent="." unique_id=1737839445]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -176.5
+offset_top = -34.0
+offset_right = 176.5
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0

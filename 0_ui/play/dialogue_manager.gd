@@ -1,8 +1,9 @@
+class_name DialogueManager
 extends Control
 
-@onready var art_xing: Character = $Xing
-@onready var art_cheng: Character = $cheng
-@onready var art_kui: Character = $kui
+@onready var art_xing: Character = $SubViewportContainer/SubViewport/Xing
+@onready var art_cheng: Character = $SubViewportContainer/SubViewport/cheng
+@onready var art_kui: Character = $SubViewportContainer/SubViewport/kui
 
 const SFX_关门 = preload("uid://cuvwsf6qjrj5t")
 const SFX_故障 = preload("uid://c7mi8pwnhu83m")
@@ -23,36 +24,38 @@ const BGM_环境音_葵田 = ("uid://b5cs6juaeum4p")
 const BGM_环境音_雨声 = ("uid://sr21ytxttcew")
 const BGM_终焉1 = ("uid://f3kebsl5nfem")
 
-
-const SCENE_BLACK = preload("uid://dn34e3flleudc")
-const SCENE_家白天 = preload("uid://ducxi0lqlssns")
-const SCENE_家黑天 = preload("uid://dvpro1j6mkuhb")
-const SCENE_教室白天 = preload("uid://sawmxdwgw2kg")
-const SCENE_树下黄昏 = preload("uid://4apkllo7q2c6")
-const SCENE_校园白天 = preload("uid://tckwrcuvkys8")
-const SCENE_校廊白天 = preload("uid://beo6b0fcw6u6w")
-const SCENE_海边街道 = preload("uid://debgfe1wlpkna")
-const SCENE_海边黑天 = preload("uid://c6dem7bswldp7")
-const SCENE_玄关白天 = preload("uid://b858t6m3inr4u")
-const SCENE_玄关黑天 = preload("uid://qbymvyavqr6v")
-const SCENE_街道白天 = preload("uid://bjb5w25gmq0jb")
-const SCENE_街道黑天 = preload("uid://bcynouxusfpjt")
-const SCENE_门口白天 = preload("uid://c7quoyhtiorf7")
-const SCENE_葵田白天 = preload("uid://dh2t6xmtnemqn")
-const SCENE_葵田黑天 = preload("uid://c322h820dyptf")
-const SCENE_葵田梦魇 = preload("uid://bhu0me1b0wjtx")
-const SCENE_街道黄昏 = preload("uid://bdpi27vm1vns")
-const SCENE_电车内白天 = preload("uid://b3qt5j0ob8jlq")
-const SCENE_电车内黄昏 = preload("uid://dxrjl58cfo5nj")
-const SCENE_海边黄昏 = preload("uid://dtqj5mu1t1ixx")
-const CG_吊死的葵 = preload("uid://dfgx3ogjxx3ua")
-const CG_海与星空 = preload("uid://dsaix4is0phm5")
-const CG_葵田画 = preload("uid://dlxggilpa5gk1")
-const CG_赶地铁 = preload("uid://cv0o1icnyjbk1")
-
-func switch_back_scene(new_scene:PackedScene):
+var dict_scene={
+"黑屏幕" : preload("uid://dn34e3flleudc"),
+"家白天" : preload("uid://ducxi0lqlssns"),
+"家黑天" : preload("uid://dvpro1j6mkuhb"),
+"教室白天" : preload("uid://sawmxdwgw2kg"),
+"树下黄昏" : preload("uid://4apkllo7q2c6"),
+"校园白天" : preload("uid://tckwrcuvkys8"),
+"校廊白天" : preload("uid://beo6b0fcw6u6w"),
+"海边街道" : preload("uid://debgfe1wlpkna"),
+"海边黑天" : preload("uid://c6dem7bswldp7"),
+"玄关白天" : preload("uid://b858t6m3inr4u"),
+"玄关黑天" : preload("uid://qbymvyavqr6v"),
+"街道白天" : preload("uid://bjb5w25gmq0jb"),
+"街道黑天" : preload("uid://bcynouxusfpjt"),
+"门口白天" : preload("uid://c7quoyhtiorf7"),
+"葵田白天" : preload("uid://dh2t6xmtnemqn"),
+"葵田黑天" : preload("uid://c322h820dyptf"),
+"葵田梦魇" : preload("uid://bhu0me1b0wjtx"),
+"街道黄昏" : preload("uid://bdpi27vm1vns"),
+"电车内白天" : preload("uid://b3qt5j0ob8jlq"),
+"电车内黄昏" : preload("uid://dxrjl58cfo5nj"),
+"海边黄昏" : preload("uid://dtqj5mu1t1ixx"),
+"吊死的葵" : preload("uid://dfgx3ogjxx3ua"),
+"海与星空" : preload("uid://dsaix4is0phm5"),
+"葵田画" : preload("uid://dlxggilpa5gk1"),
+"赶地铁" : preload("uid://cv0o1icnyjbk1"),
+}
+var str_current_scene:String="BLACK"
+func switch_back_scene(str_scene:String):
 	for s in %NodeScene.get_children():s.queue_free()
-	%NodeScene.add_child(new_scene.instantiate())
+	%NodeScene.add_child(dict_scene[str_scene].instantiate())
+	str_current_scene=str_scene
 func hide_all_characters():
 	art_xing.hide()
 	art_cheng.hide()
@@ -185,38 +188,7 @@ func line_to_curtain(line:String):
 			if full_cmd=="":break
 			var cmd_parameter:PackedStringArray=full_cmd.split("-")
 			match cmd_parameter[0]:
-				"场景","CG":
-					match cmd_parameter[1]:
-						"黑屏幕":dia.process.push_back(func():switch_back_scene(SCENE_BLACK))
-						"葵田白天":dia.process.push_back(func():switch_back_scene(SCENE_葵田白天))
-						"葵田黑天":dia.process.push_back(func():switch_back_scene(SCENE_葵田黑天))
-						"葵田梦魇":dia.process.push_back(func():switch_back_scene(SCENE_葵田梦魇))
-						"家白天":dia.process.push_back(func():switch_back_scene(SCENE_家白天))
-						"家黑天":dia.process.push_back(func():switch_back_scene(SCENE_家黑天))
-						"玄关白天":dia.process.push_back(func():switch_back_scene(SCENE_玄关白天))
-						"玄关黑天":dia.process.push_back(func():switch_back_scene(SCENE_玄关黑天))
-
-						"街道白天":dia.process.push_back(func():switch_back_scene(SCENE_街道白天))
-						"街道黄昏":dia.process.push_back(func():switch_back_scene(SCENE_街道黄昏))
-						"街道黑天":dia.process.push_back(func():switch_back_scene(SCENE_街道黑天))
-
-						"电车内白天":dia.process.push_back(func():switch_back_scene(SCENE_电车内白天))
-						"电车内黄昏":dia.process.push_back(func():switch_back_scene(SCENE_电车内黄昏))
-
-						"海边黄昏":dia.process.push_back(func():switch_back_scene(SCENE_海边黄昏))
-						"海边黑天":dia.process.push_back(func():switch_back_scene(SCENE_海边黑天))
-
-						"教室白天":dia.process.push_back(func():switch_back_scene(SCENE_教室白天))
-						"门口白天":dia.process.push_back(func():switch_back_scene(SCENE_门口白天))
-						"校廊白天":dia.process.push_back(func():switch_back_scene(SCENE_校廊白天))
-						"校园白天":dia.process.push_back(func():switch_back_scene(SCENE_校园白天))
-						"树下黄昏":dia.process.push_back(func():switch_back_scene(SCENE_树下黄昏))
-						
-						"吊死的葵":dia.process.push_back(func():switch_back_scene(CG_吊死的葵))
-						"海与星空":dia.process.push_back(func():switch_back_scene(CG_海与星空))
-						"葵田画":dia.process.push_back(func():switch_back_scene(CG_葵田画))
-						"赶地铁":dia.process.push_back(func():switch_back_scene(CG_赶地铁))
-						_:print("指令",cmd_parameter[0],"未知参数:",cmd_parameter[1])
+				"场景","CG":dia.process.push_back(func():switch_back_scene(cmd_parameter[1]))
 				"SFX":
 					match cmd_parameter[1]:
 						"关门":dia.process.push_back(func():Global.play_sfx(SFX_关门))
@@ -247,10 +219,10 @@ func line_to_curtain(line:String):
 						_:print("指令",cmd_parameter[0],"未知参数:",cmd_parameter[1])
 				"文字":
 					match cmd_parameter[1]:
-						"抖动上下":dia.process.push_back(func():dia.ap.play("shake"))
+						"抖动上下":dia.process.push_back(func():dia.time_shake=0.5)
 						_:print("指令",cmd_parameter[0],"未知参数:",cmd_parameter[1])
 				_:print("未知指令:",cmd_parameter[0])
-
+		
 		dia.arr_text=text_offset[0].split("//")
 		dia.end.connect(func():
 			clear_dialogue_box()
@@ -260,7 +232,9 @@ func line_to_curtain(line:String):
 		%NodeDbox.add_child(dia)
 
 func _ready() -> void:
+	Global.dialogue_manager=self
 	load_current_curtain()
+	if Global.load_order!=0:load_game(Global.load_order)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("esc"):
@@ -274,13 +248,40 @@ func _on_button_back_pressed() -> void:
 	%Pause.hide()
 
 func _on_button_save_pressed() -> void:
-	Global.save_activate()
+	Global.save_activate(true,false)
 
 func _on_button_load_pressed() -> void:
-	Global.save_activate()
+	Global.save_activate(false,false)
 
 func _on_button_setting_pressed() -> void:
 	Global.setting_activate()
 
 func _on_button_theme_pressed() -> void:
 	Global.switch_scene(Global.UI_THEME)
+
+func save_game(order:int):
+	var dict:Dictionary={
+		"order_curtain":order_curtain,
+		"str_current_scene":str_current_scene,
+	}
+	var json=JSON.stringify(dict)
+	var only_file_name="user://sav"+String.num_int64(order)
+	var file:FileAccess=FileAccess.open(only_file_name+".sav",FileAccess.WRITE)
+	if file:
+		file.store_string(json)
+		file.close()
+		var img:Image=%SubViewport.get_texture().get_image()
+		img.save_png(only_file_name+".png")
+func load_game(order:int):
+	var path="user://sav"+String.num_int64(order)+".sav"
+	var file:FileAccess=FileAccess.open(path,FileAccess.READ)
+	if file:
+		var string=file.get_as_text()
+		var data=JSON.parse_string(string)
+		order_curtain=data["order_curtain"]
+		str_current_scene=data["str_current_scene"]
+		switch_back_scene(str_current_scene)
+		hide_all_characters()
+		clear_dialogue_box()
+		load_current_curtain()
+		%Pause.hide()

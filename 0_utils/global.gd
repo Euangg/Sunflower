@@ -28,6 +28,7 @@ func play_bgm(path_bgm:String):
 func stop_bgm():%Bgm.stop()
 func _on_bgm_finished() -> void:%Bgm.play()
 
+var dialogue_manager:DialogueManager=null
 
 func setting_activate():
 	%Setting.show()
@@ -35,8 +36,13 @@ func setting_activate():
 func setting_inactivate():
 	%Setting.hide()
 	
-func save_activate():
+var load_order:int
+func save_activate(save_mode:bool,theme:bool):
 	%Save.show()
+	%Save.refresh_saves()
+	%Save.is_save_mode=save_mode
+	%Save.is_main_theme=theme
 
 func save_inactivate():
 	%Save.hide()
+func is_save_exist(order:int):return FileAccess.file_exists("user://sav"+String.num_int64(order)+".sav")
