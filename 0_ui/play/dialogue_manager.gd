@@ -40,10 +40,15 @@ const SCENE_街道黑天 = preload("uid://bcynouxusfpjt")
 const SCENE_门口白天 = preload("uid://c7quoyhtiorf7")
 const SCENE_葵田白天 = preload("uid://dh2t6xmtnemqn")
 const SCENE_葵田黑天 = preload("uid://c322h820dyptf")
+const SCENE_葵田梦魇 = preload("uid://bhu0me1b0wjtx")
 const SCENE_街道黄昏 = preload("uid://bdpi27vm1vns")
 const SCENE_电车内白天 = preload("uid://b3qt5j0ob8jlq")
 const SCENE_电车内黄昏 = preload("uid://dxrjl58cfo5nj")
 const SCENE_海边黄昏 = preload("uid://dtqj5mu1t1ixx")
+const CG_吊死的葵 = preload("uid://dfgx3ogjxx3ua")
+const CG_海与星空 = preload("uid://dsaix4is0phm5")
+const CG_葵田画 = preload("uid://dlxggilpa5gk1")
+const CG_赶地铁 = preload("uid://cv0o1icnyjbk1")
 
 func switch_back_scene(new_scene:PackedScene):
 	for s in %NodeScene.get_children():s.queue_free()
@@ -180,11 +185,12 @@ func line_to_curtain(line:String):
 			if full_cmd=="":break
 			var cmd_parameter:PackedStringArray=full_cmd.split("-")
 			match cmd_parameter[0]:
-				"场景":
+				"场景","CG":
 					match cmd_parameter[1]:
 						"黑屏幕":dia.process.push_back(func():switch_back_scene(SCENE_BLACK))
 						"葵田白天":dia.process.push_back(func():switch_back_scene(SCENE_葵田白天))
 						"葵田黑天":dia.process.push_back(func():switch_back_scene(SCENE_葵田黑天))
+						"葵田梦魇":dia.process.push_back(func():switch_back_scene(SCENE_葵田梦魇))
 						"家白天":dia.process.push_back(func():switch_back_scene(SCENE_家白天))
 						"家黑天":dia.process.push_back(func():switch_back_scene(SCENE_家黑天))
 						"玄关白天":dia.process.push_back(func():switch_back_scene(SCENE_玄关白天))
@@ -205,6 +211,11 @@ func line_to_curtain(line:String):
 						"校廊白天":dia.process.push_back(func():switch_back_scene(SCENE_校廊白天))
 						"校园白天":dia.process.push_back(func():switch_back_scene(SCENE_校园白天))
 						"树下黄昏":dia.process.push_back(func():switch_back_scene(SCENE_树下黄昏))
+						
+						"吊死的葵":dia.process.push_back(func():switch_back_scene(CG_吊死的葵))
+						"海与星空":dia.process.push_back(func():switch_back_scene(CG_海与星空))
+						"葵田画":dia.process.push_back(func():switch_back_scene(CG_葵田画))
+						"赶地铁":dia.process.push_back(func():switch_back_scene(CG_赶地铁))
 						_:print("指令",cmd_parameter[0],"未知参数:",cmd_parameter[1])
 				"SFX":
 					match cmd_parameter[1]:
@@ -227,7 +238,7 @@ func line_to_curtain(line:String):
 						"环境音_电车":dia.process.push_back(func():Global.play_bgm(BGM_环境音_电车))
 						"环境音_葵田":dia.process.push_back(func():Global.play_bgm(BGM_环境音_葵田))
 						"环境音_雨声":dia.process.push_back(func():Global.play_bgm(BGM_环境音_雨声))
-						"终焉1":dia.process.push_back(func():Global.play_bgm(BGM_终焉1))
+						"终焉1","终焉":dia.process.push_back(func():Global.play_bgm(BGM_终焉1))
 						"停":dia.process.push_back(func():Global.stop_bgm())
 						_:print("指令",cmd_parameter[0],"未知参数:",cmd_parameter[1])
 				"动画":

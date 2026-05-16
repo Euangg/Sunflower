@@ -1,7 +1,10 @@
 extends Node
 
 var auto_play:bool=false
-var speed_auto_play=11
+var acc:bool=false
+var speed_auto_play=20
+var co_auto=1
+var co_play=1
 var auto_play_temp_pause:bool=false
 func set_auto_play_temp_pause():
 	auto_play_temp_pause=true

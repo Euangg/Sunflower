@@ -82,10 +82,13 @@ texture = ExtResource("5_xr16k")
 
 [node name="Name" type="Label" parent="名字框（底图）" unique_id=681491306]
 unique_name_in_owner = true
-offset_left = -26.0
-offset_top = -10.0
-offset_right = 14.0
-offset_bottom = 13.0
+offset_left = -44.0
+offset_top = -22.0
+offset_right = -4.0
+offset_bottom = 23.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 9
+theme_override_font_sizes/font_size = 34
 text = "葵"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -103,7 +106,11 @@ offset_right = -364.0
 offset_bottom = -70.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_constants/line_spacing = 3
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 28
 text = "asdfasdfadfa"
+autowrap_mode = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1824483254]
 libraries/ = SubResource("AnimationLibrary_g6tfh")

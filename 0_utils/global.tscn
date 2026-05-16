@@ -8,12 +8,14 @@
 script = ExtResource("1_fleak")
 
 [node name="TimerTempPause" type="Timer" parent="." unique_id=55295209]
+unique_name_in_owner = true
 
 [node name="Sfx" type="Node" parent="." unique_id=1867395209]
 unique_name_in_owner = true
 
 [node name="Bgm" type="AudioStreamPlayer" parent="." unique_id=1093223964]
 unique_name_in_owner = true
+bus = &"Bgm"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1928601747]
 

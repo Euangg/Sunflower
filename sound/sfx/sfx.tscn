@@ -4,6 +4,7 @@
 
 [node name="Sfx" type="AudioStreamPlayer" unique_id=639165045]
 autoplay = true
+bus = &"Sfx"
 script = ExtResource("1_7bcmr")
 
 [connection signal="finished" from="." to="." method="_on_finished"]

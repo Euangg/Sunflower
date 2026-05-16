@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cf7i447hlc86a"]
+
+[ext_resource type="Texture2D" uid="uid://bvrrsmhyo5kd5" path="res://0_ui/play/快进.png" id="1_3ikrq"]
+[ext_resource type="Texture2D" uid="uid://b7j7kjxi74hm4" path="res://0_ui/play/快进中.tres" id="2_5noy2"]
+[ext_resource type="Script" uid="uid://di0jxw2wli31u" path="res://0_ui/play/button_skip.gd" id="3_5noy2"]
+
+[node name="ButtonSkip" type="TextureButton" unique_id=245099535]
+custom_minimum_size = Vector2(80, 80)
+offset_right = 65.0
+offset_bottom = 54.0
+texture_normal = ExtResource("1_3ikrq")
+texture_hover = ExtResource("2_5noy2")
+stretch_mode = 3
+script = ExtResource("3_5noy2")
+
+[node name="Label" type="Label" parent="." unique_id=445854594]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = 28.5
+offset_right = 20.0
+offset_bottom = 51.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.8235294, 0.7411765, 0.5411765, 1)
+text = "快进"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

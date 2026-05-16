@@ -65,6 +65,7 @@ text = "加载梦境"
 [node name="Button3" parent="VBoxContainer" unique_id=270200481 instance=ExtResource("6_i2imb")]
 layout_mode = 2
 size_flags_horizontal = 0
+disabled = true
 text = "附加内容"
 
 [node name="Button4" parent="VBoxContainer" unique_id=1529026415 instance=ExtResource("6_i2imb")]

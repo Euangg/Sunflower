@@ -8,10 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://dx87yo21u6ysw" path="res://0_ui/play/边框.png" id="5_vltgv"]
 [ext_resource type="Texture2D" uid="uid://btehynr3v4fvt" path="res://0_ui/play/暂停.png" id="6_vltgv"]
 [ext_resource type="Texture2D" uid="uid://cndj80n2gmbby" path="res://0_ui/play/暂停_hover.png" id="7_hqkw3"]
-[ext_resource type="Texture2D" uid="uid://bvrrsmhyo5kd5" path="res://0_ui/play/快进.png" id="8_mw6lc"]
-[ext_resource type="Texture2D" uid="uid://qo1syymu7ik4" path="res://0_ui/play/快进中.png" id="9_eeh5j"]
-[ext_resource type="Texture2D" uid="uid://u6ba8rf1bekt" path="res://0_ui/play/自动播放.tres" id="10_76cvl"]
-[ext_resource type="Texture2D" uid="uid://djk67i1jvyoan" path="res://0_ui/play/自动播放_hover.tres" id="11_1ih5g"]
+[ext_resource type="PackedScene" uid="uid://cf7i447hlc86a" path="res://0_ui/play/button_skip.tscn" id="9_yb8ch"]
+[ext_resource type="PackedScene" uid="uid://da16gnqy0wvv" path="res://0_ui/play/button_auto.tscn" id="10_1ih5g"]
 [ext_resource type="Texture2D" uid="uid://djs5rxws02d44" path="res://0_dbox/aab502e39a78ea5cb57608948531e544.png" id="12_1ih5g"]
 [ext_resource type="PackedScene" uid="uid://st3qgehtm72q" path="res://0_ui/pause/pause.tscn" id="14_4l6ur"]
 
@@ -99,46 +97,11 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(1359.42, 0)
 layout_mode = 2
 
-[node name="ButtonSkip" type="TextureButton" parent="HBoxContainer" unique_id=1848589335]
+[node name="ButtonSkip" parent="HBoxContainer" unique_id=245099535 instance=ExtResource("9_yb8ch")]
 layout_mode = 2
-texture_normal = ExtResource("8_mw6lc")
-texture_hover = ExtResource("9_eeh5j")
-stretch_mode = 3
 
-[node name="Label" type="Label" parent="HBoxContainer/ButtonSkip" unique_id=1188325672]
-layout_mode = 0
-offset_left = 11.0
-offset_top = 62.0
-offset_right = 51.0
-offset_bottom = 85.0
-theme_override_colors/font_color = Color(0.8235294, 0.7411765, 0.5411765, 1)
-text = "快进"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="ButtonAuto" type="TextureButton" parent="HBoxContainer" unique_id=1841470149]
+[node name="ButtonAuto" parent="HBoxContainer" unique_id=286927807 instance=ExtResource("10_1ih5g")]
 layout_mode = 2
-texture_normal = ExtResource("10_76cvl")
-texture_hover = ExtResource("11_1ih5g")
-stretch_mode = 3
-
-[node name="Label" type="Label" parent="HBoxContainer/ButtonAuto" unique_id=1643432581]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = -2.0
-offset_right = 20.0
-offset_bottom = 21.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(0.8235294, 0.7411765, 0.5411765, 1)
-text = "自动"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="TextureRect2" type="TextureRect" parent="." unique_id=1245200138]
 visible = false

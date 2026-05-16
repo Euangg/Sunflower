@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://da16gnqy0wvv"]
+
+[ext_resource type="Texture2D" uid="uid://u6ba8rf1bekt" path="res://0_ui/play/自动播放.tres" id="1_ebvfj"]
+[ext_resource type="Texture2D" uid="uid://djk67i1jvyoan" path="res://0_ui/play/自动播放_hover.tres" id="2_o1eqv"]
+[ext_resource type="Script" uid="uid://bfx6fqv2pue31" path="res://0_ui/play/button_auto.gd" id="3_o1eqv"]
+
+[node name="ButtonAuto" type="TextureButton" unique_id=286927807]
+custom_minimum_size = Vector2(74, 75)
+texture_normal = ExtResource("1_ebvfj")
+texture_hover = ExtResource("2_o1eqv")
+stretch_mode = 3
+script = ExtResource("3_o1eqv")
+
+[node name="Label" type="Label" parent="." unique_id=1103038301]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -2.0
+offset_right = 20.0
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.8235294, 0.7411765, 0.5411765, 1)
+text = "自动"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
